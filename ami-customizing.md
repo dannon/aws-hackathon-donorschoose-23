@@ -3,9 +3,9 @@
 The AMI ID is `ami-934b6efa`
 
 
-`apt-get install python-pip`
+`apt-get install python-pip git build-essential python-dev`
 
-`pip install django, HTSQL, HTSQL-MYSQL, HTSQL-PGSQL, HTSQL-DJANGO`
+`pip install django, HTSQL-MYSQL, HTSQL-DJANGO uwsgi`
 
 From [the HTSQL download page](http://htsql.org/download/)
 
