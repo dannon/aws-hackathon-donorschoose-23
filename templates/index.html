@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Donors Data</title>
+    <title>Donors Choose Data Client</title>
 
     <!-- Bootstrap core CSS -->
     <link href="static/css/bootstrap.css" rel="stylesheet">
@@ -25,19 +25,19 @@
 
     <!-- Static navbar -->
     <div class="navbar navbar-default navbar-static-top" style="margin-bottom:0px;" role="navigation">
-      <div class="container">
+      <div class="">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">DonorsChoice Data</span>
+            <span class="sr-only">Donors Choose Data Client</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">DonorsChoice Data</a>
+          <a class="navbar-brand" href="#">Donors Choose Data Client</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Dashboard</a></li>
+            <!-- <li class="active"><a href="#">Dashboard</a></li> -->
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -45,37 +45,44 @@
 
 
     <div class="wrap">
-        <div class="row">
-            <div class="remove-pad col-sm-12 col-md-12 col-lg-12">
+    	<div class="row">
 
-                <!-- <div class="nav-holder no-pad pull-left col-sm-3 col-md-3 col-lg-3">
-                    <div class="list-group remove-radius">
-                      <a href="#" class="list-group-item active remove-radius">
-                        Cras justo odio
-                      </a>
-                      <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                      <a href="#" class="list-group-item">Morbi leo risus</a>
-                      <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                      <a href="#" class="list-group-item remove-radius">Vestibulum at eros</a>
-                    </div>
-                </div> -->
+    		<div class="remove-pad col-sm-2 col-md-2 col-lg-2 side-nav">
+    			<div>
+				  <a href="#" class="list-group-item">Simple Query</a>
+				  <a href="#" class="list-group-item">Simple Query</a>
+				  <a href="#" class="list-group-item active">Advanced Query</a>
+				  <a href="#" class="list-group-item">Simple Query</a>
+				  <a href="#" class="list-group-item">Simple Query</a>
+				</div>
+			</div>
 
-                    <form class="form-inline query-input" role="form">
-                      <div class="form-group col-md-11 remove-pad">
-                        <label class="sr-only" for="queryInput">Enter Query</label>
-                        <input type="query" class="form-control remove-radius query-input" id="queryInput" placeholder="Enter a query...">
-                      </div>
-                      <button type="submit" class="btn btn-success remove-radius col-md-1"><span class="glyphicon glyphicon-play"></span> Run!</button>
-                    </form>
-                    <div class="results">
-                        Loading results...
-                    </div>
+    		<div class="remove-pad col-sm-10 col-md-10 col-lg-10">
+				<form class="form-inline query-input" role="form">
+				  <div class="form-group col-md-10 remove-pad">
+				    <label class="sr-only" for="queryInput">Enter Query</label>
+				    <textarea class="form-control remove-radius query-input" id="queryInput" placeholder="/query"></textarea>
+				  </div>
+				  <button type="submit" class="btn btn-success remove-radius col-md-2"><span class="glyphicon glyphicon-play"></span> Run!</button>
+				</form>
+				<div class="input-group remove-pad remove-radius">
+				  	<span class="input-group-addon remove-radius" style="padding-left:20px;"><span class="glyphicon glyphicon-share"></span> Export to:</span>
+				  	<select class="form-control col-sm-5 remove-radius" style="padding-right:20px;">
+				  		<option>Nothing</option>
+						<option>HTML</option>
+						<option>JSON</option>
+					</select>
+				</div>
 
+				<div class="clearfix"></div>
 
-            </div>
-        </div>
-    </div>
+				<div class="results">
+					<div class="alert alert-block alert-info">Loading query results....</div>
+				</div>
+			</div>
 
+		</div>
+	</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
