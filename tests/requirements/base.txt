@@ -1,6 +1,0 @@
-bcrypt
-docutils
-Pillow
-PyYAML
-pytz > dev
-selenium
