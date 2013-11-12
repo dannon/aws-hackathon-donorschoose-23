@@ -1,4 +1,8 @@
 ## Packages installed on an Ubuntu 12.04 LTS ami (ami-69f5a900)
+
+The AMI ID is `ami-934b6efa`
+
+
 `apt-get install python-pip`
 
 `pip install django, HTSQL, HTSQL-MYSQL, HTSQL-PGSQL, HTSQL-DJANGO`
