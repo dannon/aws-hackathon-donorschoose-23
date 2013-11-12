@@ -1,10 +1,85 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <script type='text/javascript' src='static/js/bootstrap.js'></script>
-    </head>
-    <body>
-        <p>Ron, fill me in!</p>
-    </body>
-</html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <title>Donors Data</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <!-- Our custom CSS -->
+    <link href="static/css/extend.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" style="margin-bottom:0px;" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">DonorsChoice Data</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">DonorsChoice Data</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Dashboard</a></li>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+    <div class="wrap">
+    	<div class="row">
+    		<div class="remove-pad col-sm-12 col-md-12 col-lg-12">
+
+    			<!-- <div class="nav-holder no-pad pull-left col-sm-3 col-md-3 col-lg-3">
+	    			<div class="list-group remove-radius">
+					  <a href="#" class="list-group-item active remove-radius">
+					    Cras justo odio
+					  </a>
+					  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+					  <a href="#" class="list-group-item">Morbi leo risus</a>
+					  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+					  <a href="#" class="list-group-item remove-radius">Vestibulum at eros</a>
+					</div>
+				</div> -->
+
+					<form class="form-inline query-input" role="form">
+					  <div class="form-group col-md-11 remove-pad">
+					    <label class="sr-only" for="queryInput">Enter Query</label>
+					    <input type="query" class="form-control remove-radius query-input" id="queryInput" placeholder="Enter a query...">
+					  </div>
+					  <button type="submit" class="btn btn-success remove-radius col-md-1"><span class="glyphicon glyphicon-play"></span> Run!</button>
+					</form>
+					<div class="results">
+						Loading results...
+					</div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+  </body>
+</html>
