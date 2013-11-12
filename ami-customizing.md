@@ -7,6 +7,8 @@ The AMI ID is `ami-934b6efa`
 
 `pip install django, HTSQL-MYSQL, HTSQL-DJANGO`
 
+Need to remove the 'login required' decorator in `htsql_django/views.py` for the `gateway` method
+
 From [the HTSQL download page](http://htsql.org/download/)
 
 ```bash
