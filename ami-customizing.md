@@ -3,7 +3,7 @@
 The AMI ID is `ami-934b6efa`
 
 
-`apt-get install python-pip git`
+`apt-get install python-pip git nginx`
 
 `pip install django, HTSQL-MYSQL, HTSQL-DJANGO`
 
@@ -25,5 +25,22 @@ apt-get install htsql-pgsql
 `apt-get install build-essential python-dev`
 
 `pip install uwsgi`
+
+mkdir -p /var/log/uwsgi
+
+
+```
+[uwsgi]
+chdir=/root/git-repos/4Roses
+module=donorsdata.wsgi:application
+master=True
+pidfile=/tmp/project-master.pid
+vacuum=True
+max-requests=5000
+daemonize=/var/log/uwsgi/donorsdata.log
+http = 0.0.0.0:8080
+```
+
+`wget https://github.com/nginx/nginx/blob/master/conf/uwsgi_params` into /etc/nginx/.
 
 Some notes stolen from the HTSQL download page: http://htsql.org/download/
