@@ -27,8 +27,8 @@ body, html {
 
 .query-input textarea {
 	height:130px;
-	padding-left:25px;
-	font-size:25px;
+	padding: 8px 25px;
+	font-size:24px;
 }
 
 .query-input button {
