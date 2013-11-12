@@ -36,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'htsql_django',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -88,3 +89,15 @@ STATICFILES_DIRS = (
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 MEDIA_ROOT = [os.path.join(BASE_DIR, 'static')]
+
+HTSQL_CONFIG = {
+    # Set query timeout in seconds (currently, PostgreSQL only).
+    'tweak.timeout': { 'timeout': 600 },
+    # Set the maximum number of output rows.
+    'tweak.autolimit': { 'limit': 10000 },
+    # Enable the web-based query editor.
+    'tweak.shell.default': {},
+    # Enable meta-data queries.
+    'tweak.meta': {},
+}
+
