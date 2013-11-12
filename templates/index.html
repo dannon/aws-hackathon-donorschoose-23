@@ -45,7 +45,18 @@
 
     <div class="wrap">
     	<div class="row">
-    		<div class="remove-pad col-sm-12 col-md-12 col-lg-12">
+
+    		<div class="remove-pad col-sm-2 col-md-2 col-lg-2 side-nav">
+    			<div>
+				  <a href="#" class="list-group-item">Simple Query</a>
+				  <a href="#" class="list-group-item">Simple Query</a>
+				  <a href="#" class="list-group-item active">Advanced Query</a>
+				  <a href="#" class="list-group-item">Simple Query</a>
+				  <a href="#" class="list-group-item">Simple Query</a>
+				</div>
+			</div>
+
+    		<div class="remove-pad col-sm-10 col-md-10 col-lg-10">
 				<form class="form-inline query-input" role="form">
 				  <div class="form-group col-md-10 remove-pad">
 				    <label class="sr-only" for="queryInput">Enter Query</label>
@@ -53,20 +64,17 @@
 				  </div>
 				  <button type="submit" class="btn btn-success remove-radius col-md-2"><span class="glyphicon glyphicon-play"></span> Run!</button>
 				</form>
-				<div class="clearfix"></div>
-			</div>
-
-			<div class="remove-pad col-sm-12 col-md-12 col-lg-12">
-				<div class="options">	
-					<div class="input-group">
-					  	<span class="input-group-addon"><span class="glyphicon glyphicon-share"></span> Export to:</span>
-					  	<select class="form-control col-sm-5">
-					  		<option>Nothing</option>
-							<option>HTML</option>
-							<option>JSON</option>
-						</select>
-					</div>
+				<div class="input-group remove-pad remove-radius">
+				  	<span class="input-group-addon remove-radius" style="padding-left:20px;"><span class="glyphicon glyphicon-share"></span> Export to:</span>
+				  	<select class="form-control col-sm-5 remove-radius" style="padding-right:20px;">
+				  		<option>Nothing</option>
+						<option>HTML</option>
+						<option>JSON</option>
+					</select>
 				</div>
+
+				<div class="clearfix"></div>
+
 				<div class="results">
 					<div class="alert alert-block alert-info">Loading query results....</div>
 				</div>
