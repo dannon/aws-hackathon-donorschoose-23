@@ -20,7 +20,6 @@ install-packages:
       - unzip
       - postgresql
       - postgresql-client
-      - psql
     - require:
       - cmd: install-htsql-repo
   pip:
