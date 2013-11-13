@@ -17,6 +17,7 @@ install-packages:
       - python-dev
       - python-pip
       - nginx
+      - unzip
     - require:
       - cmd: install-htsql-repo
   pip:
@@ -51,6 +52,12 @@ uwsgi-config:
   file.managed:
     - name: /etc/uwsgi/apps-available/donorsdata.ini
     - source: salt://files/donorsdata.ini
+
+install-application:
+  cmd.run:
+    - names: 
+      - wget https://s3.amazonaws.com/hackathon-team-23/4Roses.zip
+      - unzip 4Roses.zip -d /var/www/
 
 run-application:
   cmd.run:
