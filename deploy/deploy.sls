@@ -18,6 +18,8 @@ install-packages:
       - python-pip
       - nginx
       - unzip
+      - postgres-sql
+      - postgres-sql-client
     - require:
       - cmd: install-htsql-repo
   pip:
@@ -58,6 +60,11 @@ install-application:
     - names: 
       - wget https://s3.amazonaws.com/hackathon-team-23/4Roses.zip
       - unzip 4Roses.zip -d /var/www/
+
+build-database:
+  cmd.run:
+    - names: 
+      - wget http://adeptium-hackathon2013.s3.amazonaws.com/donorschoose+norm.sql.gz
 
 run-application:
   cmd.run:
