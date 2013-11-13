@@ -18,8 +18,9 @@ install-packages:
       - python-pip
       - nginx
       - unzip
-      - postgres-sql
-      - postgres-sql-client
+      - postgresql
+      - postgresql-client
+      - psql
     - require:
       - cmd: install-htsql-repo
   pip:
@@ -59,12 +60,32 @@ install-application:
   cmd.run:
     - names: 
       - wget https://s3.amazonaws.com/hackathon-team-23/4Roses.zip
-      - unzip 4Roses.zip -d /var/www/
+      - unzip -o 4Roses.zip -d /var/www/
+
+postgres-service:
+  service:
+    - name: postgresql
+    - running
+    - enable: True
+  cmd.run:
+    - name: sudo -u postgres psql -U postgres -d postgres -c "alter user postgres with password 'password';"
+  postgres_user:
+    - present
+    - name: root
+    - createdb: True
+    - require:
+      - cmd: postgres-service
 
 build-database:
   cmd.run:
+    - cwd: /var/tmp/
     - names: 
       - wget http://adeptium-hackathon2013.s3.amazonaws.com/donorschoose+norm.sql.gz
+      - createdb donorsdata
+      - gunzip donorschoose+norm.sql.gz
+      - psql -d donorsdata  -f donorschoose+norm.sql
+    - require:
+      - service: postgres-service
 
 run-application:
   cmd.run:
