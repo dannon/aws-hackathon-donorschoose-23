@@ -2,6 +2,7 @@
 body, html {
 	margin:0px !important;
 	padding:0px !important;
+	min-height:100%;
 }
 
 .wrap {
@@ -56,11 +57,12 @@ body, html {
 .side-nav-holder {
 	background:#494949;
 	overflow-y:hidden;
+	position:relative;
 }
 
 @media (min-width: 750px) {
       .side-nav-holder {
-		min-height:500px;
+		height:600px;
 	}
  }
 
