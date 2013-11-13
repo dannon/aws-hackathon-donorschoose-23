@@ -16,23 +16,23 @@ install-packages:
       - git
       - python-dev
       - python-pip
+      - nginx
     - require:
       - cmd: install-htsql-repo
   pip:
     - installed
     - name: uwsgi
+    - require:
+      - pkg: install-packages
 
 nginx-directories-present:
   file:
     - directory
     - names:
       - /var/log/uwsgi
-      - /etc/nginx
 
 uwsgi-params:
   cmd:
-    - wait
+    - run
     - name: wget https://github.com/nginx/nginx/blob/master/conf/uwsgi_params
     - cwd: /etc/nginx
-    - watch:
-      - file: nginx-directories-present
