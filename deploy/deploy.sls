@@ -26,29 +26,28 @@ install-packages:
       - pkg: install-packages
 
 nginx-config:
-  file:
-    - directory
-    - name:
-      - /var/log/uwsgi
   cmd:
     - run
     - name: wget https://github.com/nginx/nginx/blob/master/conf/uwsgi_params
     - cwd: /etc/nginx
-  file:
-    - managed
+  file.managed:
     - name: /etc/nginx/nginx.conf
     - source: salt://files/nginx.conf
   service:
-    - enable
+    - enable: True
     - name: nginx
-    - running: True
+    - running
 
-uwsgi-config
+uwsgi-directory:
+  file.directory:
+    - name: /var/log/uwsgi
+
+uwsgi-config:
   file.managed:
     - name: /etc/uwsgi/apps-available/donorsdata.ini
     - source: salt://files/donorsdata.ini
 
-run-application
+run-application:
   cmd.run:
     - name: uwsgi --ini /etc/uwsgi/apps-available/donorsdata.ini --chmod-socket=666
 
