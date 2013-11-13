@@ -9,5 +9,5 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'donorsdata.views.index'),
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'^htsql/', include('htsql_django.urls')),
+    url(r'^htsql/', include('htsql_django.urls')),
 ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

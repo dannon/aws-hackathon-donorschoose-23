@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'htsql_django',
+    'htsql_django',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,6 +60,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'USER': None,
+        'PASSWORD': None,
+        'HOST': None,
+        'PORT': None,
     }
 }
 
@@ -92,7 +96,7 @@ MEDIA_ROOT = [os.path.join(BASE_DIR, 'static')]
 
 HTSQL_CONFIG = {
     # Set query timeout in seconds (currently, PostgreSQL only).
-    'tweak.timeout': { 'timeout': 600 },
+    #'tweak.timeout': { 'timeout': 600 },
     # Set the maximum number of output rows.
     'tweak.autolimit': { 'limit': 10000 },
     # Enable the web-based query editor.
