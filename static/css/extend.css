@@ -57,13 +57,12 @@ body, html {
 .side-nav-holder {
 	background:#494949;
 	overflow-y:hidden;
-	position:fixed;
-	display:block;
 }
 
 @media (min-width: 768px) {
    	.side-nav-holder {
 		height:100%;
+		position:fixed;
 	}
 	.main {
 		margin-left: 32.2%;
@@ -73,6 +72,7 @@ body, html {
 @media (min-width: 992px) {
   	.side-nav-holder {
 		height:100%;
+		position:fixed;
 	}
 	.main {
 		margin-left: 24.4%;
@@ -82,6 +82,7 @@ body, html {
 @media (min-width: 1200px) {
   	.side-nav-holder {
 		height:100%;
+		position:fixed;
 	}
 	.main {
 		margin-left: 16.41%;
