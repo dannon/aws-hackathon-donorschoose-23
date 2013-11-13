@@ -20,7 +20,6 @@ install-packages:
       - unzip
       - postgresql
       - postgresql-client
-      - psql
     - require:
       - cmd: install-htsql-repo
   pip:
@@ -61,6 +60,11 @@ install-application:
     - names: 
       - wget https://s3.amazonaws.com/hackathon-team-23/4Roses.zip
       - unzip -o 4Roses.zip -d /var/www/
+  file.directory:
+    - name: /var/www/4Roses-master/static
+    - user: www-data
+    - recurse:
+      - user
 
 postgres-service:
   service:
@@ -76,13 +80,23 @@ postgres-service:
     - require:
       - cmd: postgres-service
 
+fetch-database:
+  cmd.run:
+    - name: wget http://adeptium-hackathon2013.s3.amazonaws.com/donorschoose%2Bnorm.sql.gz
+    - cwd: /var/tmp/
+
+unzip-database:
+  cmd.wait:
+    - name: gunzip donorschoose+norm.sql.gz
+    - cwd: /var/tmp/
+    - watch:
+      - cmd: fetch-database
+  
 build-database:
   cmd.run:
     - cwd: /var/tmp/
     - names: 
-      - wget http://adeptium-hackathon2013.s3.amazonaws.com/donorschoose+norm.sql.gz
       - createdb donorsdata
-      - gunzip donorschoose+norm.sql.gz
       - psql -d donorsdata  -f donorschoose+norm.sql
     - require:
       - service: postgres-service
@@ -90,5 +104,4 @@ build-database:
 run-application:
   cmd.run:
     - name: uwsgi --ini /etc/uwsgi/apps-available/donorsdata.ini --chmod-socket=666
-
 
