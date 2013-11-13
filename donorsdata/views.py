@@ -3,10 +3,12 @@ from django.template import RequestContext
 from django import template
 from htsql import HTSQL
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 
 register = template.Library()
 
 # Create your views here.
+@csrf_exempt
 def index(request):
     htsql = HTSQL('pgsql://%s:%s@%s/%s' % (settings.DATABASES['default']['USER'],
                                            settings.DATABASES['default']['PASSWORD'],
