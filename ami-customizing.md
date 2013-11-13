@@ -1,6 +1,6 @@
 ## Packages installed on an Ubuntu 12.04 LTS ami (ami-69f5a900)
 
-The AMI ID is `ami-934b6efa`
+The AMI ID is `i-ad2675ca`
 
 
 `apt-get install python-pip git nginx`
