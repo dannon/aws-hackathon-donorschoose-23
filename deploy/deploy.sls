@@ -36,3 +36,13 @@ uwsgi-params:
     - run
     - name: wget https://github.com/nginx/nginx/blob/master/conf/uwsgi_params
     - cwd: /etc/nginx
+
+nginx-config:
+  file.managed:
+    - name: /etc/nginx/nginx.conf
+    - source: salt://files/nginx.conf
+
+uwsgi-config
+  file.managed:
+    - name: /etc/uwsgi/apps-available/donorsdata.ini
+    - source: salt://files/donorsdata.ini
