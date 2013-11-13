@@ -33,10 +33,15 @@ nginx-config:
   file.managed:
     - name: /etc/nginx/nginx.conf
     - source: salt://files/nginx.conf
+    - template: jinja
   service:
     - enable: True
     - name: nginx
     - running
+
+update-nginx-config:
+  cmd.run:
+    - name: NAME=`curl http://169.254.169.254/latest/meta-data/public-hostname` && sed -i 's/server_name --change-me--/server_name '"$NAME"'/g' /etc/nginx/nginx.conf
 
 uwsgi-directory:
   file.directory:
