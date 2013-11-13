@@ -20,7 +20,7 @@ def index(request):
         results = htsql.produce(query)
         for prop in dir( results[0] ):
             if prop.startswith( '__' ) : continue
-            if prop in ['count', 'index', 'make'] : continue
+            if prop in ['count', 'index', 'make', 'bit_length', 'conjugate', 'denominator', 'imag', 'numerator'] : continue
             columns.append(prop)
     return render_to_response('index.html',{'results': results, 'query': query, 'columns': columns}, context_instance = RequestContext(request))
 
