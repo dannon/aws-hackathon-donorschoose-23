@@ -1,19 +1,22 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.http import HttpResponse
 from django import template
 from htsql import HTSQL
+from django.conf import settings
 
 register = template.Library()
 
 # Create your views here.
 def index(request):
-    htsql = HTSQL('pgsql://root:local@localhost/test')
+    htsql = HTSQL('pgsql://%s:%s@%s/%s' % (settings.DATABASES['default']['USER'],
+                                           settings.DATABASES['default']['PASSWORD'],
+                                           settings.DATABASES['default']['HOST'],
+                                           settings.DATABASES['default']['NAME']))
     results = []
     columns = []
     query = ''
     if request.method == 'POST':
-    	query = request.POST['query']
+        query = request.POST['query']
         results = htsql.produce(query)
         for prop in dir( results[0] ):
             if prop.startswith( '__' ) : continue

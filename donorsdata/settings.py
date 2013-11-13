@@ -60,11 +60,11 @@ WSGI_APPLICATION = 'donorsdata.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':'django.db.backends.postgresql_psycopg2',
-        'NAME': 'test',
+        'NAME': 'donorsdata',
         'USER': 'root',
-        'PASSWORD': 'local',
+        'PASSWORD': 'password',
         'HOST': 'localhost',
-        'PORT': None,
+        'PORT': '',
     }
 }
 
