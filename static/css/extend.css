@@ -2,6 +2,7 @@
 body, html {
 	margin:0px !important;
 	padding:0px !important;
+	min-height:100%;
 }
 
 .wrap {
@@ -45,21 +46,75 @@ body, html {
 	margin:10px 40px;
 }
 
+.status {
+	margin-top:30px;
+}
+
 .options {
 	padding:10px 35px;
 }
 
-.side-nav {
+.side-nav-holder {
 	background:#494949;
 	overflow-y:hidden;
-	height:100%;
 }
 
-.side-nav div {
-	min-height:600px;
+@media (min-width: 768px) {
+   	.side-nav-holder {
+		height:100%;
+		position:fixed;
+	}
+	.main {
+		margin-left: 32.2%;
+	}
 }
 
-.side-nav div a {
+@media (min-width: 992px) {
+  	.side-nav-holder {
+		height:100%;
+		position:fixed;
+	}
+	.main {
+		margin-left: 24.4%;
+	}
+}
+
+@media (min-width: 1200px) {
+  	.side-nav-holder {
+		height:100%;
+		position:fixed;
+	}
+	.main {
+		margin-left: 16.41%;
+	}
+}
+
+ 
+
+.side-nav {
+	background:#494949;
+}
+
+.side-nav nav {
+	padding:0px !important;
+}
+
+.side-nav nav ul {
+	list-style:none;
+	margin:0px;
+	padding:0px !important;
+	-webkit-margin-before: 0px !important;
+	-webkit-margin-after: 0px !important;
+	-webkit-padding-start: 0px !important;
+}
+
+.side-nav nav ul li {
+	list-style:none;
+	margin:0px;
+	float:none !important;
+}
+
+.side-nav nav a {
 	padding-left:20px;
 	-webkit-border-radius: 0px !important;
 	-moz-border-radius: 0px !important;
@@ -70,7 +125,7 @@ body, html {
 	border-bottom-right-radius: 0px !important;
 }
 
-.side-nav div .active {
+.side-nav nav .active {
 	background:#494949;
 	border-color:#2d2d2d;
 	-moz-box-shadow:    inset 0 0 10px #2d2d2d;
@@ -78,12 +133,16 @@ body, html {
    	box-shadow:         inset 0 0 10px #2d2d2d;
 }
 
-.side-nav div .active:hover {
+.side-nav nav .active:hover {
 	background:#2d2d2d;
 	border-color:#2d2d2d;
 }
 
 .footer {
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
 	height:50px;
 	padding:15px;
 	text-align: center;
@@ -91,4 +150,5 @@ body, html {
 	font-size:15px;
 	background-color: #f8f8f8;
 	border-color: #e7e7e7;
+	margin-bottom: 0px !important;
 }

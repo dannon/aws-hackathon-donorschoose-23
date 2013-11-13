@@ -31,41 +31,60 @@
     <div class="navbar navbar-default navbar-static-top" style="margin-bottom:0px;" role="navigation">
       <div class="">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">DonorsChoose.org Data Client</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#"><img src="static/img/logo.gif"></a>
+          	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          	  	<span class="sr-only">Toggle Navigation</span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+            	<span class="icon-bar"></span>
+          	</button>
+          	<a class="navbar-brand hidden-xs" href="#"><img src="static/img/logo.gif"></a>
+          	<a class="navbar-brand visible-xs hidden-sm hidden-md hidden-lg" href="#">Data Client</a>
         </div>
+        <div class="status hidden-xs hidden-sm col-md-8 col-lg-8">
+        	<div>Status info here....</div>
+        	<div class="progress progress-striped active">
+			  <div class="progress-bar"  role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+			    <span class="sr-only">0% Complete</span>
+			  </div>
+			</div>
+		</div>
       </div>
     </div>
-
 
     <div class="wrap">
     	<div class="row">
 
-    		<div class="remove-pad col-sm-2 col-md-2 col-lg-2 side-nav">
-    			<div>
-				  <a href="#" class="list-group-item active">Simple Query</a>
-				  <a href="#" class="list-group-item">Simple Query</a>
-				  <a href="#" class="list-group-item">Advanced Query</a>
-				  <a href="#" class="list-group-item">Simple Query</a>
-				  <a href="#" class="list-group-item">Simple Query</a>
+    		<div class="side-nav-holder remove-pad col-sm-4 col-md-3 col-lg-2">
+	    		<div class="side-nav">
+	    			<nav class="collapse navbar-collapse" role="navigation">
+	    				<ul>
+							<li><a href="#" class="list-group-item active">Simple Query</a></li>
+							<li><a href="#" class="list-group-item">Simple Query</a></li>
+							<li><a href="#" class="list-group-item">Advanced Query</a></li>
+							<li><a href="#" class="list-group-item">Simple Query</a></li>
+							<li><a href="#" class="list-group-item">Simple Query</a></li>
+						</ul>
+					</nav>
 				</div>
 			</div>
 
-    		<div class="remove-pad col-sm-10 col-md-10 col-lg-10">
+    		<div class="main remove-pad col-sm-8 col-md-9 col-lg-10">
 				<form class="form-inline query-input" role="form">
-				  	<div class="form-group col-md-12 remove-pad">
+				  	<div class="form-group col-sm-12 col-md-12 col-lg-12 remove-pad">
 				    	<label class="sr-only" for="queryInput">Enter Query</label>
 				    	<textarea class="form-control remove-radius query-input" id="queryInput" placeholder="/query"></textarea>
 				  	</div>
 				  	<div class="clearfix"></div>
-				  	<div class="well remove-pad remove-radius">
+
+				  	<!-- Mobile -->
+				  	<div class="hidden-md hidden-lg hidden-sm visible-xs" style="margin:0px;">
+						<button type="submit" class="btn btn-lg btn-block btn-success pull-right remove-radius" style="margin:0px;"><span class="glyphicon glyphicon-play"></span> Run</button>
+					</div>
+
+				  	<!-- Options for small, medium, and large devices -->
+				  	<div class="well remove-pad remove-radius hidden-xs">
 					  	<button type="submit" class="btn btn-lg btn-success pull-right"><span class="glyphicon glyphicon-play"></span> Run</button>
-					  	<div class="input-group pull-right col-sm-5 col-md-5 col-lg-5">
+					  	<div class="input-group pull-right col-sm-6 col-md-6 col-lg-4">
 						  	<span class="input-group-addon"><span class="glyphicon glyphicon-share"></span> Export to:</span>
 						  	<select class="form-control">
 						  		<option>Nothing</option>
@@ -81,12 +100,12 @@
 				</form>
 
 				<div class="results">
-					<div class="alert alert-block alert-info">Loading query results....</div>
+
 				</div>
 			</div>
 		</div>
 
-		<div class="navbar navbar-default footer" role="footer">
+		<div class="navbar navbar-default footer remove-radius" role="footer">
 	        Footer info here
       	</div>
 	</div>
