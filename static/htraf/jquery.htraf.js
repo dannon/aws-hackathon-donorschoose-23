@@ -333,7 +333,7 @@ function loading(el) {
     var position = $('body').css('position');
     if(position != 'relative' && position != 'absolute')
         $('body').css('position', 'relative');
-    return $('<img style="position: absolute;" src="' + HTRAF.prefix + 
+    return $('<img style="position: absolute;top: 500; left: 0; bottom: 0; right: 0;margin:auto;" src="' + HTRAF.prefix + 
       '/htraf-load.gif">').appendTo('body').position({
         of: $(el),
         my: 'center center',

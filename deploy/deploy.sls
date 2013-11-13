@@ -106,4 +106,3 @@ run-application:
   cmd.run:
     - name: uwsgi --ini /etc/uwsgi/apps-available/donorsdata.ini --chmod-socket=666
 
-
